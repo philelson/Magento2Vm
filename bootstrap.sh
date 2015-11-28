@@ -82,10 +82,6 @@ chmod 777 /var/www/ops/services/redis/redis.service
 ln -s /var/www/ops/services/redis/redis.service /etc/systemd/system/redis.service
 chmod 777 /etc/systemd/system/redis.service
 
-chmod 777 /var/www/ops/services/selinux/pegasus.service
-ln -s /var/www/ops/services/selinux/pegasus.service /etc/systemd/system/pegasus.service
-chmod 777 /etc/systemd/system/pegasus.service
-
 #
 # Install composer
 #
