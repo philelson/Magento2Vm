@@ -1,8 +1,6 @@
 #
 # author phil@pegasus-commerce.com
 #
-# Github key 6bc03fa6185ff8c59097157a283741cc85650cd4
-#
 Vagrant.configure("2") do |config|
 	# All Vagrant configuration is done here. The most common configuration
   	# options are documented and commented below. For a complete reference,
@@ -18,12 +16,12 @@ Vagrant.configure("2") do |config|
   	config.vm.network :private_network, ip: "11.10.2.200"
   
   	# We are simply provisioning the environment via a shell script. 
-  	# This includes apache, PHP, MySQL, vhosts and downloading and installed the latest DB
+  	# This includes apache, PHP, MySQL, vhosts and downloading and installed of Magento 2
   	config.vm.provision :shell, :path => "bootstrap.sh"
   
   	# Current directory this of vagrant file is to be mounted on the guest machine
-  	# in /var/www/b2c (same path which is in the vhosts)
   	config.vm.synced_folder ".", "/var/www", type: "nfs"
+
 
   	# Create a forwarded port mapping which allows access to a specific port
   	# within the machine from a port on the host machine. In the example below,
@@ -35,9 +33,9 @@ Vagrant.configure("2") do |config|
 
 	#VM with 1GB of RAM
   	config.vm.provider :virtualbox do |vb|
-  		vb.customize 	["modifyvm", :id, "--cpuexecutioncap", "90"]
-    	vb.customize 	["modifyvm", :id, "--memory", "4096"]
-    	vb.customize 	["modifyvm", :id, "--cpus", "1"]
+        vb.customize 	["modifyvm", :id, "--cpuexecutioncap", "90"]
+        vb.customize 	["modifyvm", :id, "--memory", "2048"]
+        vb.customize 	["modifyvm", :id, "--cpus", "1"]
   	end
   
   	#Configuring the host vhosts
