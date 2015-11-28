@@ -176,7 +176,7 @@ COMMIT
 EOF
 )
 
-echo "$SELINUX" > /etc/sysconfig/iptables
+echo "$IPTABLES" > /etc/sysconfig/iptables
 iptables -F
 
 #
