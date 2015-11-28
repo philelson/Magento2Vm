@@ -191,10 +191,7 @@ systemctl enable redis
 #
 systemctl start httpd.service
 systemctl start mysqld.service
-
-# start redis
-redis-server /var/www/ops/services/redis/redis.conf
-#systemctl start redis
+systemctl start redis
 
 #
 # Magento setup
