@@ -1,0 +1,13 @@
+[Unit]
+Description=Selinux Rules at boot
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/var/www/pegasus/services/selinux/pegasus.sh
+Restart=no
+
+
+[Install]
+WantedBy=multi-user.target

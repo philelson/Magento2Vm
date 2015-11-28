@@ -1,0 +1,13 @@
+[Unit]
+Description=Redis Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/redis-server /var/www/pegasus/services/redis/redis.conf
+Restart=on-abort
+
+
+[Install]
+WantedBy=multi-user.target
